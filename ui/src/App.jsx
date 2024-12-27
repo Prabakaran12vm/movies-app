@@ -1,9 +1,20 @@
-import React from 'react'
+import React from "react";
+import { Outlet } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import Navigation from "./redux/features/auth/Navigation";
+
 
 const App = () => {
   return (
-    <div className='text-3xl text-orange-600'>App</div>
-  )
-}
+    <>
+      <ToastContainer />
+      <Navigation/>
+      <main className="py-3">
+      <Outlet />
+      </main>
+    </>
+  );
+};
 
-export default App
+export default App;
